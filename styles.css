@@ -5,11 +5,16 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 body {
+  display: inline-block;
   margin-left: 40%;
-  margin-top: 25%;
+  margin-top: 10%;
   color: rgb(35, 34, 34);
   background-color: rgb(139, 148, 139);
   font-size: x-large;
+}
+
+h1 {
+  color: beige;
 }
 
 p {
@@ -45,5 +50,5 @@ li {
   margin-right: 200px;
 }
 .checkBtn {
-  margin-left: 80px;
+  margin-left: 10px;
 }

@@ -6,7 +6,7 @@ const array = [];
 
 addBtn.addEventListener("click", function () {
   if (input.value === "") {
-    alert("Please enter your task");
+    alert("Please enter your task!");
     task.removeChild(checkBtn, trashBtn);
   }
 
