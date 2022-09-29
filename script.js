@@ -4,8 +4,6 @@ const toDoContainer = document.querySelector("#toDoContainer");
 const taskDone = document.querySelector("#task-done");
 const array = [];
 
-let number = 1;
-
 addBtn.addEventListener("click", function () {
   if (input.value === "") {
     alert("Please enter your task");
@@ -13,9 +11,13 @@ addBtn.addEventListener("click", function () {
   }
 
   let task = document.createElement("li");
-  task.innerHTML = input.value;
   toDoContainer.appendChild(task);
-  array.push(input.value);
+
+  let textlabel = document.createElement("span");
+  textlabel.classList.add("textLabel");
+  textlabel.innerText = input.value;
+
+  task.appendChild(textlabel);
 
   let checkBtn = document.createElement("button");
   checkBtn.classList.add("checkBtn");
@@ -29,22 +31,37 @@ addBtn.addEventListener("click", function () {
 
   input.value = "";
 
+  const taskObject = {};
+  taskObject.todo = textlabel.innerText;
+
   checkBtn.addEventListener("click", function () {
-    if (checkBtn.innerText == "Completed") {
-      task.style.textDecoration = "line-through";
-      task.style.color = "green";
-      taskDone.innerHTML = "";
-      taskDone.append(array.length);
-      checkBtn.innerText = "Not Completed";
+    if (checkBtn.innerText === "Not Completed") {
+      checkBtn.removeEventListener("click");
     } else {
-      task.style.textDecoration = "none";
-      task.style.color = "black";
-      checkBtn.innerText = "Completed";
+      textlabel.style.textDecoration = "line-through";
+      textlabel.style.color = "green";
+      taskDone.innerHTML++;
+      checkBtn.innerText = "Not Completed";
+      array.push(taskObject);
+      taskObject.status = "Completed";
+      console.log(taskObject);
     }
   });
+  textlabel.addEventListener("click", function () {
+    if (checkBtn.innerText === "Completed") {
+      textlabel.removeEventListener("click");
+    } else {
+      textlabel.style.textDecoration = "none";
+      textlabel.style.color = "black";
+      checkBtn.innerText = "Completed";
+      taskDone.innerHTML--;
+      taskObject.status = "Not Completed";
+      console.log(taskObject);
+    }
+  });
+
   trashBtn.addEventListener("click", function () {
     toDoContainer.removeChild(task);
-    array.pop(task);
-    taskDone.replaceWith(array.length);
+    array.pop(taskObject);
   });
 });
