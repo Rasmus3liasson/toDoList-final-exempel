@@ -33,6 +33,8 @@ addBtn.addEventListener("click", function () {
 
   const taskObject = {};
   taskObject.todo = textlabel.innerText;
+  taskObject.status = "Not Completed";
+  array.push(taskObject);
 
   checkBtn.addEventListener("click", function () {
     if (checkBtn.innerText === "Not Completed") {
@@ -42,9 +44,7 @@ addBtn.addEventListener("click", function () {
       textlabel.style.color = "green";
       taskDone.innerHTML++;
       checkBtn.innerText = "Not Completed";
-      array.push(taskObject);
       taskObject.status = "Completed";
-      console.log(taskObject);
     }
   });
   textlabel.addEventListener("click", function () {
@@ -56,11 +56,13 @@ addBtn.addEventListener("click", function () {
       checkBtn.innerText = "Completed";
       taskDone.innerHTML--;
       taskObject.status = "Not Completed";
-      console.log(taskObject);
     }
   });
 
   trashBtn.addEventListener("click", function () {
+    if (checkBtn.innerText === "Not Completed") {
+      taskDone.innerHTML--;
+    }
     toDoContainer.removeChild(task);
     array.pop(taskObject);
   });
