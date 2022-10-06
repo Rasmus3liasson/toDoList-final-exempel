@@ -2,11 +2,15 @@ const input = document.querySelector("#inputField");
 const addBtn = document.querySelector("#addBtn");
 const toDoContainer = document.querySelector("#toDoContainer");
 const taskDone = document.querySelector("#task-done");
+const wrongMessageText = document.querySelector("#wrongMessageText");
 const array = [];
 
 addBtn.addEventListener("click", function () {
   if (input.value === "") {
-    alert("Please enter your task!");
+    let wrongMessage = document.createElement("p");
+    wrongMessage.classList.add("wrongMessage");
+    wrongMessage.innerText = "You must enter a task!";
+    wrongMessageText.replaceWith(wrongMessage);
     task.removeChild(checkBtn, trashBtn);
   }
 
@@ -16,7 +20,6 @@ addBtn.addEventListener("click", function () {
   let textlabel = document.createElement("span");
   textlabel.classList.add("textLabel");
   textlabel.innerText = input.value;
-
   task.appendChild(textlabel);
 
   let checkBtn = document.createElement("button");

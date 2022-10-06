@@ -9,18 +9,26 @@
     <title>To Do List</title>
   </head>
   <body>
-    <header>
-      <h1>To Do List</h1>
-    </header>
-    <section>
-      <p>Antal gjorda uppgifter: <span id="task-done">0</span></p>
-      <div class="inputContainer">
-        <input type="text" id="inputField" placeholder="Enter your task here" />
-        <button id="addBtn">Add Task</button>
-        <div id="toDoContainer"></div>
-      </div>
-    </section>
+    <div class="main">
+      <header>
+        <h1>To Do List</h1>
+      </header>
+      <section>
+        <p>Antal gjorda uppgifter: <span id="task-done">0</span></p>
 
+        <div class="inputContainer">
+          <p id="wrongMessageText"></p>
+          <input
+            type="text"
+            id="inputField"
+            placeholder="Enter your task here"
+          />
+          <button id="addBtn">Add Task</button>
+
+          <div id="toDoContainer"></div>
+        </div>
+      </section>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
