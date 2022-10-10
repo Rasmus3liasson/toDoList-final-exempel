@@ -43,8 +43,8 @@ p {
   margin-top: -3rem;
   margin-left: 5rem;
 }
-
-.wrongMessage {
+.wrongTextError {
+  color: var(--red-color);
   animation: blink;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -115,21 +115,21 @@ li {
 }
 @keyframes blink {
   0% {
-    color: var(--white-color);
+    opacity: 0;
   }
   20% {
-    color: var(--red-color);
+    opacity: 1;
   }
   40% {
-    color: var(--white-color);
+    opacity: 0;
   }
   60% {
-    color: var(--red-color);
+    opacity: 1;
   }
   80% {
-    color: var(--white-color);
+    opacity: 0;
   }
   100% {
-    color: var(--red-color);
+    opacity: 1;
   }
 }

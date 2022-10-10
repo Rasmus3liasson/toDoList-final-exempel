@@ -6,12 +6,12 @@ const wrongMessageText = document.querySelector("#wrongMessageText");
 const array = [];
 
 addBtn.addEventListener("click", function () {
-  if (input.value === "") {
-    let wrongMessage = document.createElement("p");
-    wrongMessage.classList.add("wrongMessage");
-    wrongMessage.innerText = "You must enter a task!";
-    wrongMessageText.replaceWith(wrongMessage);
+tr  if (!input.value) {
+    wrongMessageText.innerText = "You must enter a task!";
+    wrongMessageText.classList.add("wrongTextError");
     task.removeChild(checkBtn, trashBtn);
+  } else if (input.value != "") {
+    wrongMessageText.innerText = "";
   }
 
   let task = document.createElement("li");
