@@ -30,24 +30,20 @@ h1 {
 }
 
 p {
-  margin-top: 80px;
+  margin-top: 40px;
   justify-content: center;
 }
 #task-done {
   animation-delay: 2s;
 }
-.inputContainer {
-  margin-top: 80px;
-}
+
 #wrongMessageText {
-  margin-top: -3rem;
-  margin-left: 5rem;
+  margin-bottom: 2rem;
 }
 .wrongTextError {
   color: var(--red-color);
   animation: blink;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  animation-duration: 1.3s;
 }
 
 input,
@@ -87,11 +83,15 @@ li {
 .textLabel {
   margin-right: 200px;
   margin-top: 6px;
+  animation: textOpacity;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 .checkBtn .trashBtn {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 @keyframes slideDown {
@@ -114,20 +114,24 @@ li {
   }
 }
 @keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 1;
-  }
+  0%,
+  20%,
+  40%,
+  60%,
   80% {
     opacity: 0;
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    opacity: 1;
+  }
+}
+@keyframes textOpacity {
+  0% {
+    opacity: 0.1;
   }
   100% {
     opacity: 1;

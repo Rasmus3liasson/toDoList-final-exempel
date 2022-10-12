@@ -6,11 +6,12 @@ const wrongMessageText = document.querySelector("#wrongMessageText");
 const array = [];
 
 addBtn.addEventListener("click", function () {
-  if (input.value === "") {
+  while (input.value === "") {
     wrongMessageText.innerText = "You must enter a task!";
-    wrongMessageText.classList.add("wrongTextError");
+    wrongMessageText.classList.toggle("wrongTextError");
     task.removeChild(checkBtn, trashBtn);
-  } else if (input.value != "") {
+  }
+  if (input.value != "") {
     wrongMessageText.innerText = "";
   }
 
@@ -48,6 +49,7 @@ addBtn.addEventListener("click", function () {
       taskDone.innerHTML++;
       checkBtn.innerText = "Not Completed";
       taskObject.status = "Completed";
+      textlabel.getAnimations("textOpacity");
     }
   });
   textlabel.addEventListener("click", function () {
@@ -55,7 +57,7 @@ addBtn.addEventListener("click", function () {
       textlabel.removeEventListener("click");
     } else {
       textlabel.style.textDecoration = "none";
-      textlabel.style.color = "black";
+      textlabel.style.color = "antiquewhite";
       checkBtn.innerText = "Completed";
       taskDone.innerHTML--;
       taskObject.status = "Not Completed";
