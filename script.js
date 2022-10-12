@@ -6,7 +6,7 @@ const wrongMessageText = document.querySelector("#wrongMessageText");
 const array = [];
 
 addBtn.addEventListener("click", function () {
-  if (!input.value) {
+  if (input.value === "") {
     wrongMessageText.innerText = "You must enter a task!";
     wrongMessageText.classList.add("wrongTextError");
     task.removeChild(checkBtn, trashBtn);
