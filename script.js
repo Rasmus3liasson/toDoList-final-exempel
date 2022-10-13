@@ -3,6 +3,7 @@ const addBtn = document.querySelector("#addBtn");
 const toDoContainer = document.querySelector("#toDoContainer");
 const taskDone = document.querySelector("#task-done");
 const wrongMessageText = document.querySelector("#wrongMessageText");
+const svampBob = document.querySelector("#svampbob");
 const array = [];
 
 addBtn.addEventListener("click", function () {
@@ -12,7 +13,8 @@ addBtn.addEventListener("click", function () {
     task.removeChild(checkBtn, trashBtn);
   }
   if (input.value != "") {
-    wrongMessageText.innerText = "";
+    wrongMessageText.innerText = null;
+    svampBob.classList.add("bild");
   }
 
   let task = document.createElement("li");
