@@ -22,9 +22,7 @@ body {
   animation-delay: 0.4;
   animation-duration: 2s;
 }
-.main ::before {
-  display: none;
-}
+
 h1 {
   color: antiquewhite;
 }
@@ -54,19 +52,21 @@ button,
   border-radius: 20px;
   padding: 14px;
   box-shadow: 1px 1px 2px black;
+  transition: 0.5s;
 }
-input:hover {
+input:hover,
+button:hover,
+.trashBtn:hover {
   opacity: 0.7;
 }
-button:hover {
-  opacity: 0.7;
-}
-
 input {
   width: 300px;
 }
 #addBtn {
   width: 120px;
+}
+#addBtn:active {
+  transform: scale(0.9);
 }
 
 li {
@@ -107,6 +107,7 @@ li {
   height: auto;
   margin-left: -570px;
 }
+
 .bild {
   animation: bild;
   animation-duration: 1s;

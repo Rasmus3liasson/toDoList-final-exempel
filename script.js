@@ -14,6 +14,7 @@ addBtn.addEventListener("click", function () {
   }
   if (input.value != "") {
     wrongMessageText.innerText = null;
+    svampBob.classList.toggle("bild");
   }
 
   let task = document.createElement("li");
@@ -41,14 +42,13 @@ addBtn.addEventListener("click", function () {
   taskObject.status = "Not Completed";
   array.push(taskObject);
 
-  svampBob.classList.toggle("bild");
-
   checkBtn.addEventListener("click", function () {
     if (checkBtn.innerText === "Not Completed") {
       checkBtn.removeEventListener("click");
     } else {
       textlabel.style.textDecoration = "line-through";
       textlabel.style.color = "green";
+      textlabel.style.transition = "1s";
       taskDone.innerHTML++;
       checkBtn.innerText = "Not Completed";
       taskObject.status = "Completed";
