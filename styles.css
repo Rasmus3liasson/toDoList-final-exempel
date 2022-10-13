@@ -168,3 +168,22 @@ li {
     transform: rotateZ(0deg);
   }
 }
+@media screen and (max-width: 480px) {
+  body {
+    margin-left: 50px;
+  }
+  input {
+    width: 200px;
+  }
+  #addBtn {
+    width: 80px;
+    height: 43px;
+    padding: 11px;
+  }
+  li {
+    width: 370px;
+    margin-left: -40px;
+    max-width: 370px;
+    min-width: 370px;
+  }
+}
