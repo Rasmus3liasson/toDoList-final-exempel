@@ -14,7 +14,6 @@ addBtn.addEventListener("click", function () {
   }
   if (input.value != "") {
     wrongMessageText.innerText = null;
-    svampBob.classList.add("bild");
   }
 
   let task = document.createElement("li");
@@ -41,6 +40,8 @@ addBtn.addEventListener("click", function () {
   taskObject.todo = textlabel.innerText;
   taskObject.status = "Not Completed";
   array.push(taskObject);
+
+  svampBob.classList.toggle("bild");
 
   checkBtn.addEventListener("click", function () {
     if (checkBtn.innerText === "Not Completed") {

@@ -39,6 +39,7 @@ p {
 
 #wrongMessageText {
   margin-bottom: 2rem;
+  color: var(--red-color);
 }
 .wrongTextError {
   color: var(--red-color);
@@ -47,10 +48,12 @@ p {
 }
 
 input,
-button {
+button,
+.trashBtn {
   border: none;
   border-radius: 20px;
   padding: 14px;
+  box-shadow: 1px 1px 2px black;
 }
 input:hover {
   opacity: 0.7;
@@ -82,7 +85,7 @@ li {
 }
 .textLabel {
   margin-right: 200px;
-  margin-top: 6px;
+  margin-top: 9px;
   animation: textOpacity;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
@@ -99,13 +102,15 @@ li {
 }
 
 #svampbob {
+  position: absolute;
   width: 350px;
   height: auto;
-  margin: -370px;
+  margin-left: -570px;
 }
 .bild {
   animation: bild;
   animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes slideDown {
