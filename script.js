@@ -32,7 +32,7 @@ addBtn.addEventListener("click", function () {
 
   let trashBtn = document.createElement("img");
   trashBtn.classList.add("trashBtn");
-  trashBtn.src = "trash.png";
+  trashBtn.src = "images/trash.png";
   task.appendChild(trashBtn);
 
   input.value = "";
